@@ -1,0 +1,27 @@
+{
+  "name": "lighthouse-optimize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack server --mode development --open --progress",
+    "build": "webpack --mode production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ooooweeee/lighthouse-optimize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ooooweeee/lighthouse-optimize/issues"
+  },
+  "homepage": "https://github.com/ooooweeee/lighthouse-optimize#readme",
+  "devDependencies": {
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  }
+}
