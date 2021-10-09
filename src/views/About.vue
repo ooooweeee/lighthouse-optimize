@@ -10,7 +10,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="less">
 .page.about {
   background-color: #4c90f7;
 }

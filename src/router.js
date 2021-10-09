@@ -5,10 +5,12 @@ import Home from './views/Home.vue'
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
-    { path: '/', component: Home },
+    { path: '/', name: 'home', component: Home },
     {
       path: '/about',
-      component: import(/* chunkFileName: about*/ './views/About.vue')
+      name: 'about',
+      component: () =>
+        import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
 })

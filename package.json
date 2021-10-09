@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack server --mode development --open --progress",
     "build": "webpack --mode production --progress"
   },
   "repository": {
@@ -22,17 +21,15 @@
   "devDependencies": {
     "@vue/compiler-sfc": "^3.2.19",
     "css-loader": "^6.3.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.0.1",
     "mini-css-extract-plugin": "^2.3.0",
-    "sass": "^1.42.1",
-    "sass-loader": "^12.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-loader": "^16.8.1",
     "webpack": "^5.55.1",
-    "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.3.0"
+    "webpack-cli": "^4.8.0"
   },
   "dependencies": {
-    "element-plus": "^1.1.0-beta.18",
     "vue": "^3.2.19",
     "vue-router": "^4.0.11"
   }

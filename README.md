@@ -1,3 +1,3 @@
 # lighthouse-optimize
 
-> 前端项目性能优化
+> webpack@5 打包优化

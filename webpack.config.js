@@ -1,9 +1,12 @@
 const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
+  output: {
+    chunkFilename: '[name].js'
+  },
   module: {
     rules: [
       {
@@ -12,19 +15,23 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
       }
     ]
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
   plugins: [
     new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: false,
+      __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false
     }),
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin()
-    // new BundleAnalyzerPlugin()
+    new MiniCssExtractPlugin({
+      chunkFilename: '[name].css'
+    })
   ]
 }
