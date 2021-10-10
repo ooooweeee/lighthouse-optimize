@@ -1,7 +1,7 @@
-const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   output: {
@@ -22,13 +22,10 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: false
-    }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       chunkFilename: '[name].css'
